@@ -1,0 +1,565 @@
+<html>
+    <head>
+        <style>
+            @import url("https://use.typekit.net/jmr4hbb.css");
+
+            :root {
+                --font-name: 'filson-pro', sans-serif;
+            }
+
+            p, li {
+                margin: 0;
+                font-weight: 200;
+                font-size: 18px;
+            }
+            
+            ul, body {
+                margin: 0;
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+                gap: 150px;
+                
+                padding: 150px 20px;
+                font-family: var(--font-name);
+            }
+
+            h2 {
+                margin: 0;
+            }
+
+            .page {
+                display: flex;
+                align-items: center;
+            }
+
+            .project-container {
+                display: flex;
+
+                justify-content: center;
+                gap: 50px;
+                width: 100%;
+            }
+
+            .project-container > div {
+                max-width: 600px;
+                flex: 1;
+            }
+
+            .project-images {
+                background-color: red;
+            }
+
+            .project-container.small > div {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;     
+            }
+
+            .project-container.small > .right {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;     
+                justify-content: space-between;
+            }
+
+            .project-entry {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;                
+            }
+
+            .year {
+                color: rgba(0, 0, 0, 0.5)
+            }
+
+            .title {
+                font-weight: 800;
+                font-size: 48px;
+            }
+
+            .tagline {
+                font-style: italic;
+                color: rgba(0, 0, 0, 0.5)
+            }
+
+            .tech-stack-container {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                justify-content: center;
+
+            }
+
+            .tech-stack-container > p {
+                font-weight: 300;
+                font-size: 15px;
+            }
+
+            .tech-stack-container img {
+                height: 18px;
+                /* width: 18px; */
+            }
+
+            .tech-stack-container .lang-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .tech-stack-container > .line {
+                flex: 1;
+                border: 1px dashed rgba(0, 0, 0, 0.25);
+            }
+
+            .links {
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+            }
+
+            .links.small {
+                margin-top: 20px;
+            }
+
+            .links > p {
+                width: 200px;
+                text-align: center;
+            }
+
+            /* .links.small > p {
+                width: 200px;
+                text-align: center;
+            } */
+
+            a {
+                color: rgb(246, 134, 30)
+            }
+
+            .project-entry-small {
+                display: flex;
+            }
+
+
+
+        </style>
+
+        <style>
+            @media screen and (max-width: 1000px) {
+                .project-container {
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .project-container > div {
+                    width: 92vw;
+                    max-width: unset;
+                }
+
+                .project-images {
+                    min-height: 500px;
+                }
+            }
+
+            @media screen and (max-width: 700px) {
+                .tech-stack-container {
+                    flex-direction: column;
+                    gap: 5px;
+                    align-items: flex-start;
+                }
+
+                .tech-stack-container .line {
+                    display: none;
+                }
+            }
+        </style>
+
+        <style>
+            .hero {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .hero-content {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .pfp {
+                height: 100px;
+                width: 100px;
+
+                border-radius: 50%;
+                border: solid white 15px;
+                box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.5);
+
+                background-color: red;
+
+                margin-bottom: 8px;
+            }
+
+            .socials {
+                display: flex;
+                gap: 5px;
+            }
+
+            .socials img {
+                height: 40px;
+                width: 40px;
+
+                padding: 7px;
+                box-sizing: border-box;
+            }
+        </style>
+        <style>
+            
+
+            .lang-icons {
+                display: flex;
+                gap: 15px;
+            }
+            /* .tech-stack-container {
+                flex-direction: column;
+            } */
+        </style>
+    </head>
+    <body>
+        <!-- <div id="scroll-blocker-container">
+            <div id="scroll-blocker"></div>
+        </div> -->
+
+        <div class="page hero">
+            <div class="hero-content">
+                <img class="pfp">
+                <h2 class="title">Ryan Pineda</h2>
+                <p>Computer Science Student @ Santa Clara University</p>
+                <p class="tagline">Class of 2028</p>
+                <div class="socials">
+                    <a href=""><img src="assets/socials/github.svg"></a>
+                    <a href=""><img src="assets/socials/linkedin.png"></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="page">
+            <div class="project-container">
+                <div class="project-entry">
+                    <p class="year">2025 - Present</p>
+                    <h2 class="title">BetterLexus</h2>
+                    <p>Modernizing a 1999 Lexus RX 300 with a frictionless and minimalist digital instrument cluster and center console.</p>
+                    <ul>
+                        <li>I reverse engineered the SPI protocol inside the instrument cluster and built a custom PCB for serial translation.</li>
+                        <li>I used Circle to write bare-metal C++ code for Raspberry Pi, and created an OpenGL UI framework for sub 4-second boot times.</li>
+                        <li>I created a custom Wayland compositor using wlroots to embed car software (ie: Spotify, Navigation) in the center console.</li>
+                    </ul>
+
+                    <div class="tech-stack-container">
+                        <p>Center Console</p>
+                        <div class='line'></div>
+                        <div class="lang-icons">
+                            <div class="lang-icon">
+                                <img src="assets/languages/cpp.png">
+                                <p>C++</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/wlroots.png">
+                                <p>wlroots</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/html.png">
+                                <p>HTML/CSS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-stack-container">
+                        <p>Instrument Cluster</p>
+                        <div class='line'></div>
+                        <div class="lang-icons">
+                            <div class="lang-icon">
+                                <img src="assets/languages/cpp.png">
+                                <p>C++</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/opengl.png">
+                                <p>OpenGL ES</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/circle.png">
+                                <p>Circle</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="links small">
+                        <p><a href="">Code Sample</a></p>
+                        <p><a href="">Read more</a></p>
+                    </div>
+                </div>
+
+                <div class="project-images">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="page">
+            <div class="project-container small">
+                <div>
+                    <p class="year">2025</p>
+                    <h2 class="title">Now Playing (Display)</h2>
+                </div>
+                <div>
+                    <p>A bare metal Raspberry Pi program and corresponding C++ QT desktop app for a secondary desk display that shows the current track and lyrics.</p>
+                    <div class="tech-stack-container">
+                        <p>Tech Stack</p>
+                        <div class='line'></div>
+                        <div class="lang-icons">
+                            <div class="lang-icon">
+                                <img src="assets/languages/cpp.png">
+                                <p>C++</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/qt.webp">
+                                <p>Qt</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/circle.png">
+                                <p>Circle</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- <div class="links small">
+                        <p><a href="">Visit</a></p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="page">
+            <div class="project-container small">
+                <div>
+                    <p class="year">2025</p>
+                    <h2 class="title">Now Playing</h2>
+                </div>
+                <div>
+                    <p>A CSS practice exercise to identically recreate the Apple Music fullscreen view for Spotify, including live lyrics and an animated background.</p>
+                    <div class="tech-stack-container">
+                        <p>Tech Stack</p>
+                        <div class='line'></div>
+                        <div class="lang-icons">
+                            <div class="lang-icon">
+                                <img src="assets/languages/js.png">
+                                <p>JS</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/webgl.png">
+                                <p>WebGL</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/html.png">
+                                <p>HTML/CSS</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="links small">
+                        <p><a href="https://www.bowl.ooo/spotify_visualizer/app.html">Visit</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page">
+            <div class="project-container">
+                <div class="project-entry">
+                    <p class="year">2024-2025</p>
+                    <h2 class="title">TopMapper</h2>
+                    <p class="tagline">"Create a Beat Saber Map. Instantly."</p>
+                    <p>Generate a Beat Saber map from any audio track using custom pre-trained models, automatically timing beats to audio and mapping gameplay objects.</p>
+                    <ul>
+                        <li>I scraped a dataset of over 100,000 Beat Saber maps and automized the training pipeline to support a large dataset.</li>
+                        <li>I experimented with model architectures and pre-trained models, noting performance and tuning accordingly</li>
+                        <li>I created a frontend web-app with Patreon integration.</li>
+                    </ul>
+
+                    <div class="tech-stack-container">
+                        <p>Frontend</p>
+                        <div class='line'></div>
+                        <div class="lang-icons">
+                            <div class="lang-icon">
+                                <img src="assets/languages/js.png">
+                                <p>JS</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/html.png">
+                                <p>HTML/CSS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-stack-container">
+                        <p>Backend</p>
+                        <div class='line'></div>
+                        <div class="lang-icons">
+                            <div class="lang-icon">
+                                <img src="assets/languages/python.svg">
+                                <p>Python</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/flask.svg">
+                                <p>Flask</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/sqlite.webp">
+                                <p>SQLite</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-stack-container">
+                        <p>Research</p>
+                        <div class='line'></div>
+                        <div class="lang-icons">
+                            <div class="lang-icon">
+                                <img src="assets/languages/wandb.png">
+                                <p>W&B</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/pytorch.png">
+                                <p>PyTorch</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/transformers.png">
+                                <p>Transformers</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="links">
+                        <p><a href="https://topmapper.net">Visit</a></p>
+                        <p><a href="https://patreon.com/topmapper">Patreon</a></p>
+                    </div>
+                </div>
+
+                <div class="project-images">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="page">
+            <div class="project-container">
+                <div class="project-entry">
+                    <p class="year">2022-2025</p>
+                    <h2 class="title">LangStudy</h2>
+                    <p class="tagline">"Cut The Nonsense"</p>
+                    <p>A web-app to prioritize uninterrupted and focused studying, including Quizlet conversion, customizable study modes, an ad-free experience, and an effortless collaboration system.</p>
+                    <ul>
+                        <li>I created a Chrome extension to facilitate importing Quizlet studysets</li>
+                        <li>I added real-time collaboration and versioning on flashcards using Redis and Socket.IO</li>
+                        <li>I implemented SuperMemo 2 and custom algorithms to aid studying</li>
+                    </ul>
+
+                    <div class="tech-stack-container">
+                        <p>Frontend</p>
+                        <div class='line'></div>
+                        <div class="lang-icons">
+                            <div class="lang-icon">
+                                <img src="assets/languages/js.png">
+                                <p>JS</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/html.png">
+                                <p>HTML/CSS</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-stack-container">
+                        <p>Backend</p>
+                        <div class='line'></div>
+                        <div class="lang-icons">
+                            <div class="lang-icon">
+                                <img src="assets/languages/python.svg">
+                                <p>Python</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/flask.svg">
+                                <p>Flask</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/mysql.png">
+                                <p>MySQL</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/redis.svg">
+                                <p>Redis</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="links">
+                        <p><a href="https://lang.lye.software">Visit</a></p>
+                    </div>
+                </div>
+
+                <div class="project-images">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="page">
+            <div class="project-container">
+                <div class="project-entry">
+                    <p class="year">2020-2022</p>
+                    <h2 class="title">Deja Vu</h2>
+                    <p>An implementation of now defunct Minecraft minigames from popular servers, and a 1:1 implementation of Bedwars for free and private matches with friends.</p>
+                    <ul>
+                        <li>I created 1:1 implementations of popular games, including Bedwars, Splegg, BlockParty, and Gravity.</li>
+                        <li>I load balanced games and managed joined player groups across seperate server instances using MySQL and WebSockets.</li>
+                    </ul>
+
+                    <div class="tech-stack-container">
+                        <p>Tech Stack</p>
+                        <div class='line'></div>
+                        <div class="lang-icons">
+                            <div class="lang-icon">
+                                <img src="assets/languages/mysql.png">
+                                <p>MySQL</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/java.png">
+                                <p>Java</p>
+                            </div>
+                            <div class="lang-icon">
+                                <img src="assets/languages/spigot.png">
+                                <p>Spigot</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="links">
+
+                    </div>
+                </div>
+
+                <div class="project-images">
+                    
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <script>
+    </script>
+</html>
