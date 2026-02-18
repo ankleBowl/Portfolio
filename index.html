@@ -22,7 +22,7 @@
                 flex-direction: column;
                 gap: 150px;
                 
-                padding: 150px 20px;
+                padding: 150px 0px;
                 font-family: var(--font-name);
             }
 
@@ -30,17 +30,15 @@
                 margin: 0;
             }
 
-            .page {
-                display: flex;
-                align-items: center;
-            }
 
             .project-container {
                 display: flex;
 
                 justify-content: center;
                 gap: 50px;
-                width: 100%;
+
+                padding: 20px;
+                box-sizing: border-box;
             }
 
             .project-container > div {
@@ -49,7 +47,14 @@
             }
 
             .project-images {
-                background-color: red;
+                /* background-color: red; */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .project-images > img {
+                max-width: 100%;
             }
 
             .project-container.small > div {
@@ -156,7 +161,7 @@
                 }
 
                 .project-container > div {
-                    width: 92vw;
+                    width: 100%;
                     max-width: unset;
                 }
 
@@ -194,11 +199,11 @@
             }
             
             .pfp {
-                height: 100px;
-                width: 100px;
+                height: 150px;
+                width: 150px;
 
                 border-radius: 50%;
-                border: solid white 15px;
+                border: solid white 10px;
                 box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.5);
 
                 background-color: red;
@@ -224,11 +229,58 @@
 
             .lang-icons {
                 display: flex;
-                gap: 15px;
+                gap: 15px;  
             }
             /* .tech-stack-container {
                 flex-direction: column;
             } */
+        </style>
+        <style>
+            .caution-banner {
+                overflow: hidden;
+                font-family: 'Arial Black';
+
+                width: 100vw;
+                height: 80px;
+                position: relative;
+
+            }
+
+            .caution-banner::before {
+                content: "CAUTION PROJECT IN PROGRESS CAUTION PROJECT IN PROGRESS CAUTION PROJECT IN PROGRESS CAUTION PROJECT IN PROGRESS CAUTION PROJECT IN PROGRESS CAUTION PROJECT IN PROGRESS ";
+                text-overflow: clip;
+                white-space: nowrap;
+                font-weight: 900;
+
+                font-size: 24px;
+
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                border: solid black 2px;
+
+                position: absolute;
+                left: -50%;
+            }
+
+            .caution-banner-end {
+                overflow: hidden;
+                width: 100vw;
+                height: 50px;
+                position: relative;
+
+            }
+
+            .caution-banner-end::before {
+                border: solid black 2px;
+                content: "";
+                width: 200vw;
+                position: absolute;
+                bottom: 0;
+                left: -50%;
+            }
         </style>
     </head>
     <body>
@@ -238,7 +290,7 @@
 
         <div class="page hero">
             <div class="hero-content">
-                <img class="pfp">
+                <img class="pfp" src="assets/me.PNG">
                 <h2 class="title">Ryan Pineda</h2>
                 <p>Computer Science Student @ Santa Clara University</p>
                 <p class="tagline">Class of 2028</p>
@@ -250,66 +302,72 @@
 
         </div>
 
+        
         <div class="page">
-            <div class="project-container">
-                <div class="project-entry">
-                    <p class="year">2025 - Present</p>
-                    <h2 class="title">BetterLexus</h2>
-                    <p>Modernizing a 1999 Lexus RX 300 with a frictionless and minimalist digital instrument cluster and center console.</p>
-                    <ul>
-                        <li>I reverse engineered the SPI protocol inside the instrument cluster and built a custom PCB for serial translation.</li>
-                        <li>I used Circle to write bare-metal C++ code for Raspberry Pi, and created an OpenGL UI framework for sub 4-second boot times.</li>
-                        <li>I created a custom Wayland compositor using wlroots to embed car software (ie: Spotify, Navigation) in the center console.</li>
-                    </ul>
+            <div class="caution-banner"></div>
+            <div>
+                <div class="project-container">
+                    <div class="project-entry">
 
-                    <div class="tech-stack-container">
-                        <p>Center Console</p>
-                        <div class='line'></div>
-                        <div class="lang-icons">
-                            <div class="lang-icon">
-                                <img src="assets/languages/cpp.png">
-                                <p>C++</p>
+                        <p class="year">2025 - Present</p>
+                        <h2 class="title">BetterLexus</h2>
+                        <p>Modernizing a 1999 Lexus RX 300 with a frictionless and minimalist digital instrument cluster and center console.</p>
+                        <ul>
+                            <li>I reverse engineered the SPI protocol inside the instrument cluster and built a custom PCB for serial translation.</li>
+                            <li>I used Circle to write bare-metal C++ code for Raspberry Pi, and created an OpenGL UI framework for sub 4-second boot times.</li>
+                            <li>I created a custom Wayland compositor using wlroots to embed car software (ie: Spotify, Navigation) in the center console.</li>
+                        </ul>
+
+                        <div class="tech-stack-container">
+                            <p>Center Console</p>
+                            <div class='line'></div>
+                            <div class="lang-icons">
+                                <div class="lang-icon">
+                                    <img src="assets/languages/cpp.png">
+                                    <p>C++</p>
+                                </div>
+                                <div class="lang-icon">
+                                    <img src="assets/languages/wlroots.png">
+                                    <p>wlroots</p>
+                                </div>
+                                <div class="lang-icon">
+                                    <img src="assets/languages/html.png">
+                                    <p>HTML/CSS</p>
+                                </div>
                             </div>
-                            <div class="lang-icon">
-                                <img src="assets/languages/wlroots.png">
-                                <p>wlroots</p>
+                        </div>
+
+                        <div class="tech-stack-container">
+                            <p>Instrument Cluster</p>
+                            <div class='line'></div>
+                            <div class="lang-icons">
+                                <div class="lang-icon">
+                                    <img src="assets/languages/cpp.png">
+                                    <p>C++</p>
+                                </div>
+                                <div class="lang-icon">
+                                    <img src="assets/languages/opengl.png">
+                                    <p>OpenGL ES</p>
+                                </div>
+                                <div class="lang-icon">
+                                    <img src="assets/languages/circle.png">
+                                    <p>Circle</p>
+                                </div>
                             </div>
-                            <div class="lang-icon">
-                                <img src="assets/languages/html.png">
-                                <p>HTML/CSS</p>
-                            </div>
+                            
+                        </div>
+                        <div class="links small">
+                            <p><a href="">Code Sample</a></p>
+                            <p><a href="">Read more</a></p>
                         </div>
                     </div>
 
-                    <div class="tech-stack-container">
-                        <p>Instrument Cluster</p>
-                        <div class='line'></div>
-                        <div class="lang-icons">
-                            <div class="lang-icon">
-                                <img src="assets/languages/cpp.png">
-                                <p>C++</p>
-                            </div>
-                            <div class="lang-icon">
-                                <img src="assets/languages/opengl.png">
-                                <p>OpenGL ES</p>
-                            </div>
-                            <div class="lang-icon">
-                                <img src="assets/languages/circle.png">
-                                <p>Circle</p>
-                            </div>
-                        </div>
-                        
+                    <div class="project-images">
+                        <img src="assets/graphics/betterlexus.png">
                     </div>
-                    <div class="links small">
-                        <p><a href="">Code Sample</a></p>
-                        <p><a href="">Read more</a></p>
-                    </div>
-                </div>
-
-                <div class="project-images">
-                    
                 </div>
             </div>
+            <div class="caution-banner-end"></div>
         </div>
 
         <div class="page">
@@ -387,7 +445,7 @@
                     <p class="tagline">"Create a Beat Saber Map. Instantly."</p>
                     <p>Generate a Beat Saber map from any audio track using custom pre-trained models, automatically timing beats to audio and mapping gameplay objects.</p>
                     <ul>
-                        <li>I scraped a dataset of over 100,000 Beat Saber maps and automized the training pipeline to support a large dataset.</li>
+                        <li>I scraped a dataset of over 100,000 Beat Saber maps and optimized the training pipeline to support a large dataset.</li>
                         <li>I experimented with model architectures and pre-trained models, noting performance and tuning accordingly</li>
                         <li>I created a frontend web-app with Patreon integration.</li>
                     </ul>
@@ -453,7 +511,7 @@
                 </div>
 
                 <div class="project-images">
-
+                    <img src="assets/graphics/topmapper.png">
                 </div>
             </div>
         </div>
@@ -512,9 +570,8 @@
                         <p><a href="https://lang.lye.software">Visit</a></p>
                     </div>
                 </div>
-
                 <div class="project-images">
-                    
+                    <img src="assets/graphics/lang.png">
                 </div>
             </div>
         </div>
