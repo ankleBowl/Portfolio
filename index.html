@@ -291,6 +291,20 @@
                 left: -50%;
             }
         </style>
+        <style>
+            .in-progress {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .in-progress > div {
+                flex: 1;
+                height: 2px;
+                background-color: rgba(0, 0, 0, 0.25);
+            }
+        </style>
     </head>
     <body>
         <!-- <div id="scroll-blocker-container">
@@ -313,7 +327,12 @@
 
         
         <div class="page">
-            <div class="caution-banner"></div>
+            <div class="in-progress" style="margin-bottom: 70px;">
+                <div></div>
+                <p class="tagline">In Progress</p>
+                <div></div>
+            </div>
+            <!-- <div class="caution-banner"></div> -->
             <div>
                 <div class="project-container">
                     <div class="project-entry">
@@ -376,7 +395,10 @@
                     </div>
                 </div>
             </div>
-            <div class="caution-banner-end"></div>
+            <!-- <div class="caution-banner-end"></div> -->
+             <div class="in-progress" style="margin-top: 70px;">
+                <div></div>
+            </div>
         </div>
 
         <div class="page">
