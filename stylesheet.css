@@ -1,0 +1,34 @@
+@import url("https://use.typekit.net/jmr4hbb.css");
+
+:root {
+    --font-name: 'filson-pro', sans-serif;
+}
+
+p, li {
+    margin: 0;
+    font-weight: 200;
+    font-size: 18px;
+}
+
+ul {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    
+    padding: 150px 0px;
+    font-family: var(--font-name);
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+
+a {
+    color: rgb(246, 134, 30)
+}

@@ -6,37 +6,8 @@
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="1000">
         <title>Ryan Pineda's Portfolio</title>
+        <link rel="stylesheet" href="stylesheet.css">
         <style>
-            @import url("https://use.typekit.net/jmr4hbb.css");
-
-            :root {
-                --font-name: 'filson-pro', sans-serif;
-            }
-
-            p, li {
-                margin: 0;
-                font-weight: 200;
-                font-size: 18px;
-            }
-            
-            ul, body {
-                margin: 0;
-            }
-
-            body {
-                display: flex;
-                flex-direction: column;
-                gap: 150px;
-                
-                padding: 150px 0px;
-                font-family: var(--font-name);
-            }
-
-            h2 {
-                margin: 0;
-            }
-
-
             .project-container {
                 display: flex;
 
@@ -109,12 +80,12 @@
                 font-size: 15px;
             }
 
-            .tech-stack-container img {
+            .lang-icons img {
                 height: 18px;
                 /* width: 18px; */
             }
 
-            .tech-stack-container .lang-icon {
+            .lang-icon {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -146,15 +117,13 @@
                 text-align: center;
             } */
 
-            a {
-                color: rgb(246, 134, 30)
-            }
-
             .project-entry-small {
                 display: flex;
             }
 
-
+            ul {
+                margin: 0;
+            }
 
         </style>
 
@@ -320,33 +289,75 @@
                 <h2 class="title">Ryan Pineda</h2>
                 <p>Computer Science Student @ Santa Clara University</p>
                 <p class="tagline">Class of 2028</p>
+                <div class="lang-icons">
+                    <div class="lang-icon">
+                        <img src="assets/languages/html.png">
+                        <p>HTML/CSS</p>
+                    </div>
+                    <div class="lang-icon">
+                        <img src="assets/languages/js.png">
+                        <p>JS</p>
+                    </div>
+                    <div class="lang-icon">
+                        <img src="assets/languages/cpp.png">
+                        <p>C++</p>
+                    </div>
+                    <div class="lang-icon">
+                        <img src="assets/languages/opengl.png">
+                        <p>OpenGL</p>
+                    </div>
+                    <div class="lang-icon">
+                        <img src="assets/languages/python.svg">
+                        <p>Python</p>
+                    </div>
+                    <div class="lang-icon">
+                        <img src="assets/languages/java.png">
+                        <p>Java</p>
+                    </div>
+                    <div class="lang-icon">
+                        <img src="assets/languages/swift.png">
+                        <p>Swift</p>
+                    </div>
+                </div>
                 <div class="socials">
                     <a href="https://github.com/ankleBowl" target="_blank"><img src="assets/socials/github.svg"></a>
                     <a href="https://www.linkedin.com/in/ryan-pineda-29b463359/" target="_blank"><img src="assets/socials/linkedin.png"></a>
                 </div>
+
             </div>
 
         </div>
 
         
         <div class="page">
-            <div class="in-progress" style="margin-bottom: 70px;">
+            <div class="in-progress" style="margin-bottom: 40px;">
                 <div></div>
                 <p class="tagline">In Progress</p>
                 <div></div>
             </div>
             <!-- <div class="caution-banner"></div> -->
             <div>
+                <a href="blog/1.html">
+                    <div style="margin-bottom: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                        <div style="padding: 30px 10px; max-width: 600px; width: 95vw; text-align: center; border: dashed black 1px; border-radius: 5px; display: flex; gap: 20px; align-items: center; justify-content: center;">
+                            <p>Read about my experience working on this project</p>
+                            <svg style="width: 20px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" viewBox="0 0 32 32" version="1.1" x="0px" y="0px"><title>Down</title><desc>Created with Sketch.</desc><g stroke="none" stroke-width="0" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g sketch:type="MSArtboardGroup" transform="translate(-6.000000, -8.000000)" fill="#000000"><g sketch:type="MSLayerGroup" transform="translate(23.000000, 23.000000) rotate(-135.000000) translate(-23.000000, -23.000000) "><g transform="translate(2.000000, 2.000000)" sketch:type="MSShapeGroup"><rect x="19" y="0" width="4" height="40"/></g><g transform="translate(23.000000, 23.707107) rotate(45.000000) translate(-23.000000, -23.707107) translate(7.500000, 8.207107)" sketch:type="MSShapeGroup"><rect x="6.03961325e-14" y="26" width="30" height="4"/><rect x="26" y="6.39488462e-14" width="4" height="30"/></g></g></g></g></svg>
+                        </div>
+
+                    </div>
+                </a>
+
+
                 <div class="project-container">
                     <div class="project-entry">
 
                         <p class="year">2025 - Present</p>
                         <h2 class="title">BetterLexus</h2>
-                        <p>Modernizing a 1999 Lexus RX 300 with a frictionless and minimalist digital instrument cluster and center console.</p>
+                        <p>Replaced the original instrument cluster in a Lexus RX 300 1999 with a bare-metal Raspberry Pi based display and Linux center console.</p>
                         <ul>
-                            <li>I reverse engineered the SPI protocol inside the instrument cluster and built a custom PCB for serial translation.</li>
-                            <li>I used Circle to write bare-metal C++ code for Raspberry Pi, and created an OpenGL UI framework for sub 4-second boot times.</li>
-                            <li>I created a custom Wayland compositor using wlroots to embed car software (ie: Spotify, Navigation) in the center console.</li>
+                            <li>Reverse engineered the instrument cluster's SPI protocol and built a custom PCB to translate vehicle telemtry over serial.</li>
+                            <li>Implemented a bare-metal C++ runtime on Raspberry Pi using Circle for an OpenGL ES dashboard with sub-4s cold boot time.</li>
+                            <li>Created a Wayland compositor using wlroots to embed standard Linux software (ie: Spotify, Firefox) in the center console.</li>
                         </ul>
 
                         <div class="tech-stack-container">
@@ -411,7 +422,7 @@
                     <h2 class="title">Now Playing (Display)</h2>
                 </div>
                 <div>
-                    <p>A bare metal Raspberry Pi program and corresponding C++ QT desktop app for a secondary desk display that shows the current track and lyrics.</p>
+                    <p>A bare metal C++ Raspberry Pi program and corresponding C++ QT desktop app for a secondary display for music. Includes live lyrics and a multi-core synchronization for an animated background.</p>
                     <div class="tech-stack-container">
                         <p>Tech Stack</p>
                         <div class='line'></div>
@@ -445,7 +456,7 @@
                     <h2 class="title">Now Playing</h2>
                 </div>
                 <div>
-                    <p>A CSS practice exercise to identically recreate the Apple Music fullscreen view for Spotify, including live lyrics and an animated background.</p>
+                    <p>A near identical recration of the Apple Music fullscreen view using WebGL and CSS, including live lyrics and an animated background.</p>
                     <div class="tech-stack-container">
                         <p>Tech Stack</p>
                         <div class='line'></div>
@@ -465,7 +476,7 @@
                         </div>
                     </div>
                     <div class="links small">
-                        <p><a href="https://www.bowl.ooo/spotify_visualizer/app.html" target="_blank">Visit</a></p>
+                        <p style="width: 300px"><a href="https://www.bowl.ooo/spotify_visualizer/app.html" target="_blank">Visit (Connect With Spotify)</a></p>
                     </div>
                 </div>
             </div>
@@ -477,11 +488,11 @@
                     <p class="year">2024-2025</p>
                     <h2 class="title">TopMapper</h2>
                     <p class="tagline">"Create a Beat Saber Map. Instantly."</p>
-                    <p>Generate a Beat Saber map from any audio track using custom pre-trained models, automatically timing beats to audio and mapping gameplay objects.</p>
+                    <p>Machine learning system that generates Beat Saber maps from audio by predicting beat timing and gameplay object placement.</p>
                     <ul>
-                        <li>I scraped a dataset of over 100,000 Beat Saber maps and optimized the training pipeline to support a large dataset.</li>
-                        <li>I experimented with model architectures and pre-trained models, noting performance and tuning accordingly</li>
-                        <li>I created a frontend web-app with Patreon integration.</li>
+                        <li>Built a dataset of 100k+ Beat Saber maps and created a multi-step curation pipeline to ensure genre diversity and map quality.</li>
+                        <li>Trained different model architectures (LLaMA, Whisper, CNNs, CTC), noting performance using W&B and tuning accordingly. Applied reinforcement learning for better pattern flow.</li>
+                        <li>Built a Flask-backed web application that generates maps on demand and integrates Patreon authentication for gated features.</li>
                     </ul>
 
                     <div class="tech-stack-container">
